@@ -2,8 +2,6 @@
 #include <klib.h>
 #include <rtthread.h>
 
-
-
 static Context* ev_handler(Event e, Context *c) {
   Context **rt_from,**rt_to;
   Context ***from_to = (Context ***)rt_thread_self()->user_data;
@@ -11,7 +9,7 @@ static Context* ev_handler(Event e, Context *c) {
   rt_to = from_to[1];
 
   switch (e.event) {
-    case EVENT_YIELD: 
+    case 11: 
       if(rt_from){
         *rt_from = c;
       }
